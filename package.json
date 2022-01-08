@@ -4,7 +4,7 @@
   "description": "Deployment tests for Security Headers",
   "main": "App.js",
   "scripts": {
-    "test": "test"
+    "test": "node App.js"
   },
   "author": "Laurence Dale",
   "license": "ISC",
