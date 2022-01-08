@@ -1,0 +1,14 @@
+{
+  "name": "ci-headers",
+  "version": "1.0.0",
+  "description": "Deployment tests for Security Headers",
+  "main": "App.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Laurence Dale",
+  "license": "ISC",
+  "dependencies": {
+    "check-my-headers": "^0.1.1"
+  }
+}
