@@ -10,8 +10,8 @@ A simple test utility for security headers
 
 This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
-- [Node.js](https://nextjs.org/)
-- [check-my-headers](https://reactjs.org/)
+- [Node.js](https://nodejs.org/en/)
+- [check-my-headers](https://www.npmjs.com/package/check-my-headers)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -33,27 +33,24 @@ This is an example of how to list things you need to use the software and how to
 
 _Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/Lightraine2/ci-headers.git
    ```
-3. Install NPM packages
+2. Install NPM package
    ```sh
    npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = "ENTER YOUR API";
    ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+Either define your Application Url inside the "ci-config.json" file or provide as a command line arugment i.e.
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+```sh
+node App.js https://mysite.com
+```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -61,14 +58,8 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 ## Roadmap
 
-- [x] Add Changelog
-- [x] Add back to top links
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
-- [ ] Multi-language Support
-  - [ ] Chinese
-  - [ ] Spanish
-
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
+- [ ] Error handling for DNS failures
+- [ ] Output formatting for highlighting higher severity issues
+- [ ] Unit tests
 
 <p align="right">(<a href="#top">back to top</a>)</p>
