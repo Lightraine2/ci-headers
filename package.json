@@ -9,6 +9,7 @@
   "author": "Laurence Dale",
   "license": "ISC",
   "dependencies": {
-    "check-my-headers": "^0.1.1"
+    "check-my-headers": "^0.1.1",
+    "jest": "^27.4.7"
   }
 }
