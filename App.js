@@ -1,14 +1,10 @@
 const checkHeaders = require('./functions/CheckHeaders')
-
-const juiceShopUrl = "https://juice-shop.herokuapp.com/#/"
-const userUrl = process.argv[2]
-
 const config = require('./ci-config.json')
 
-//Add check to make sure app has been run properly i.e. only one argument and it's correctly formatted url with http/https protocol specified
+const cmdUrl = process.argv[2]
 
-if (userUrl) {
-    checkHeaders(userUrl)
+if (cmdUrl) {
+    checkHeaders(cmdUrl)
 } else {
     checkHeaders(config['app-url'])
 }
