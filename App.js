@@ -5,9 +5,9 @@ const userUrl = process.argv[2]
 
 //Add check to make sure app has been run properly i.e. only one argument and it's correctly formatted url with http/https protocol specified
 
-console.log(userUrl)
+//console.log(userUrl)
  
-checkHeaders(userUrl)
+checkHeaders(juiceShopUrl)
 
 
 
