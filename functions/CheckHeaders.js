@@ -54,7 +54,6 @@ module.exports = function checkHeaders(url) {
             console.log("High Priority items to review: ") 
             console.log("\n")   
             console.log(errors)
-            console.log("\n")
             console.log("Consider removing fields marked as 'Remove' or 'Deprecated'\n")
             console.log("Ensure your applications are returning active security headers https://owasp.org/www-project-secure-headers/\n")
         }
@@ -62,15 +61,13 @@ module.exports = function checkHeaders(url) {
             console.log("Medium Priority items to review: ") 
             console.log("\n")   
             console.log(warns)
-            console.log("\n")
             console.log("Consider removing fields marked as 'Remove' or 'Deprecated'\n")
             console.log("Consider returning active security headers https://owasp.org/www-project-secure-headers/\n")
         }
         if (infos.length > 0) {        
-            console.log("High Priority items to review: ") 
+            console.log("Lower Priority items to review: ") 
             console.log("\n")   
             console.log(infos)
-            console.log("\n")
             console.log("Consider removing fields marked as 'Extra Field' as these may be additional information returned to malicious users whilst not providing application functionality\n")
             
         }
