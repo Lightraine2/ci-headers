@@ -12,6 +12,7 @@ This project is built with Node.js and the NPM package "check-my-headers"
 
 - [Node.js](https://nodejs.org/en/)
 - [check-my-headers](https://www.npmjs.com/package/check-my-headers)
+- [jest] (https://www.npmjs.com/package/jest)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -56,7 +57,7 @@ node App.js https://mysite.com
 ## Roadmap
 
 - [ ] Error handling for DNS failures
-- [ ] Output formatting for highlighting higher severity issues
+- [x] Output formatting for highlighting higher severity issues
 - [ ] Unit tests
 
 <p align="right">(<a href="#top">back to top</a>)</p>

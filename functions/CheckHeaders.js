@@ -20,13 +20,60 @@ module.exports = function checkHeaders(url) {
         // }
         
         else {
+       
         console.log('Successful connection established')
         console.log(`Status code: ${status}`)
         console.log('\n')
-        console.log(`Messages:`)
-        console.log(messages)
-        console.log("Current headers:")
+
+        console.log("Current headers returned from: " + url)
+        console.log("\n")
         console.log(headers)
+        console.log("\n")
+        console.log("Items to review below: \n")
+
+        const results = messages
+        let errors = []
+        let warns = []
+        let infos = []
+
+
+        results.forEach(msg => {
+            
+            if (msg.type === 'error') {
+            errors.push(msg)
+            }            
+            if (msg.type === 'warn') {
+            warns.push(msg)
+            }            
+            if (msg.type === 'info') {
+            infos.push(msg)
+            }            
+        });
+
+        if (errors.length > 0) {    
+            console.log("High Priority items to review: ") 
+            console.log("\n")   
+            console.log(errors)
+            console.log("\n")
+            console.log("Consider removing fields marked as 'Remove' or 'Deprecated'\n")
+            console.log("Ensure your applications are returning active security headers https://owasp.org/www-project-secure-headers/\n")
+        }
+        if (warns.length > 0) {        
+            console.log("Medium Priority items to review: ") 
+            console.log("\n")   
+            console.log(warns)
+            console.log("\n")
+            console.log("Consider removing fields marked as 'Remove' or 'Deprecated'\n")
+            console.log("Consider returning active security headers https://owasp.org/www-project-secure-headers/\n")
+        }
+        if (infos.length > 0) {        
+            console.log("High Priority items to review: ") 
+            console.log("\n")   
+            console.log(infos)
+            console.log("\n")
+            console.log("Consider removing fields marked as 'Extra Field' as these may be additional information returned to malicious users whilst not providing application functionality\n")
+            
+        }
         } 
     
         })
