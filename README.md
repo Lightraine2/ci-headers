@@ -47,7 +47,13 @@ Node.js installed on your Operating System of choice - [Node.js](https://nodejs.
 Either define your Application Url inside the "ci-config.json" file or provide as a command line arugment i.e.
 
 ```sh
-node App.js https://mysite.com
+npm run app https://mysite.com
+```
+
+Unit tests script:
+
+```sh
+npm run test 
 ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -56,8 +62,8 @@ node App.js https://mysite.com
 
 ## Roadmap
 
-- [ ] Error handling for DNS failures
-- [x] Output formatting for highlighting higher severity issues
-- [ ] Unit tests
+- [ ] Error handling for DNS failures or HTTP 503s/Server errors
+- [ ] Better output formatting for highlighting higher severity issues
+- [ ] Unit tests for output formatting
 
 <p align="right">(<a href="#top">back to top</a>)</p>

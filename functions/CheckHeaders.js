@@ -8,46 +8,33 @@ function checkInput(url) {
     return("No URL Provided")
 }
 
-function checkNetwork(url) {
-    const res = axios
+async function checkNetwork(url) {
+    const res = await axios
     .get(url)
-    .then(res => res.data)
-    .catch(err => 'error')
-    return res.data    
+    .then(res => res.status)
+    .catch(err => console.error(err))
+    return (res)
 }
 
-function checkHeadersReturned(url) {
-   try {
-       checkMyHeaders(url)
-       .then(({messages, headers}) => {
-           return headers
-       })  
-   } catch (error) {
-       console.log(error)
-   } 
-
-}
+async function checkHeadersReturned(url) {
+    const res = await axios
+    .get(url)
+    .then(res => res.headers)
+    .catch(err => console.error(err)) 
+    if (res) {
+        return true
+    }
+  }
 
 function checkHeaders(url) {
-    
+   
     console.log('\n')
     console.log('Checking Security Headers returned from ' + url)
     console.log('\n')
 
-    try {
     checkMyHeaders(url)
     .then(({ messages, headers, status }) => {
-        if (status != 200) {
-            console.log('HTTP Error returned - check url formatting including http/https protocol i.e. "https://site.address.com"')
-            }
-        //TODO DNS failure handling   
-        // if (status = 500 | 503 | 504) {
-        //     console.log("Application was found but Web server returned errors: ")
-        //     console.log("HTTP Status code: " + status)
-        //     return
-        // }
-        
-        else {
+      
        
         console.log('Successful connection established')
         console.log(`Status code: ${status}`)
@@ -64,9 +51,7 @@ function checkHeaders(url) {
         let warns = []
         let infos = []
 
-
         results.forEach(msg => {
-            
             if (msg.type === 'error') {
             errors.push(msg)
             }            
@@ -79,37 +64,25 @@ function checkHeaders(url) {
         });
 
         if (errors.length > 0) {    
-            console.log("High Priority items to review: ") 
-            console.log("\n")   
+            console.log("High Priority items to review: ")    
             console.log(errors)
             console.log("Consider removing fields marked as 'Remove' or 'Deprecated'\n")
-            console.log("Ensure your applications are returning active security headers https://owasp.org/www-project-secure-headers/\n")
+            console.log("Ensure your applications are returning active security headers marked as 'Missing Field' https://owasp.org/www-project-secure-headers/\n")
         }
         if (warns.length > 0) {        
             console.log("Medium Priority items to review: ") 
             console.log("\n")   
             console.log(warns)
             console.log("Consider removing fields marked as 'Remove' or 'Deprecated'\n")
-            console.log("Consider returning active security headers https://owasp.org/www-project-secure-headers/\n")
+            console.log("Consider returning active security headers marked as 'Missing Field' https://owasp.org/www-project-secure-headers/\n")
         }
         if (infos.length > 0) {        
             console.log("Lower Priority items to review: ") 
             console.log("\n")   
             console.log(infos)
             console.log("Consider removing fields marked as 'Extra Field' as these may be additional information returned to malicious users whilst not providing application functionality\n")
-            
         }
-        } 
-    
         })
-    } catch (error) {
-    console.log("Something went wrong")
-    //console.error(error)
-    }
-
-    
-
-    
     
 }
 
