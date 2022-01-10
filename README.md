@@ -12,7 +12,7 @@ This project is built with Node.js and the NPM package "check-my-headers"
 
 - [Node.js](https://nodejs.org/en/)
 - [check-my-headers](https://www.npmjs.com/package/check-my-headers)
-- [jest](https://www.npmjs.com/package/jest)
+- [Jest](https://www.npmjs.com/package/jest)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -44,7 +44,7 @@ Node.js installed on your Operating System of choice - [Node.js](https://nodejs.
 
 ## Usage
 
-Either define your Application Url inside the "ci-config.json" file or provide as a command line arugment i.e.
+Either define your Application Url inside the "ci-config.json" file or provide as a command line argument i.e.
 
 ```sh
 npm run app https://mysite.com
