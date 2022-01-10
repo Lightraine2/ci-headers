@@ -1,2 +1,0 @@
-const checkHeaders = require('./CheckHeaders')
-

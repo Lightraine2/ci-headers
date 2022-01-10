@@ -1,6 +1,34 @@
 const checkMyHeaders = require('check-my-headers')
+const axios = require('axios')
 
-module.exports = function checkHeaders(url) {
+function checkInput(url) {
+    if (url) {
+        return("URL Provided")
+    } else
+    return("No URL Provided")
+}
+
+function checkNetwork(url) {
+    const res = axios
+    .get(url)
+    .then(res => res.data)
+    .catch(err => 'error')
+    return res.data    
+}
+
+function checkHeadersReturned(url) {
+   try {
+       checkMyHeaders(url)
+       .then(({messages, headers}) => {
+           return headers
+       })  
+   } catch (error) {
+       console.log(error)
+   } 
+
+}
+
+function checkHeaders(url) {
     
     console.log('\n')
     console.log('Checking Security Headers returned from ' + url)
@@ -84,4 +112,6 @@ module.exports = function checkHeaders(url) {
     
     
 }
+
+module.exports = {checkInput, checkNetwork, checkHeadersReturned, checkHeaders}
 
